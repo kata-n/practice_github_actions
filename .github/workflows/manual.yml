@@ -1,0 +1,15 @@
+name: workflow-dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      actionsDeploy:
+        type: string
+        description: "Name of the person to greet"
+        required: true
+        default: "devploy to development"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, ${{ inputs.actionsDeploy }}!"
